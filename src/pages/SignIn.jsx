@@ -1,10 +1,14 @@
 import {useState} from 'react'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import {Link} from 'react-router-dom'
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+import {Link, useNavigate} from 'react-router-dom'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
+import {toast} from 'react-toastify'
+
 
 
 const SignIn = () => {
+    const navigate = useNavigate()
 
     const [signInPayLoad, setSignInPayLoad] = useState({
         email: '',
@@ -22,7 +26,25 @@ const SignIn = () => {
 
     const {email, password} = signInPayLoad
 
-    console.log(email)
+    const onSubmitHandler = async(e) => {
+        e.preventDefault()
+
+        try {
+            const auth = getAuth()
+
+            const userCredential = await signInWithEmailAndPassword(auth, email, password)
+    
+            if (userCredential.user) {
+                navigate('/profile')
+            }
+        }catch (error){
+            toast.error('Something went wrong')
+            console.log(error)
+        }
+      
+    }
+
+
 
     return(
         <div className='pageContainer'>
@@ -30,7 +52,7 @@ const SignIn = () => {
                 <p className='pageHeader'>Welcome Back</p>
             </header>
             <main>
-            <form>
+            <form onSubmit={onSubmitHandler}>
                 <input className='emailInput' type='text' onChange={onChangeHandler} id='email' value={email} placeholder='Email'/>
                 <div className='passwordInputDiv'>
                 <input className="passwordInput" type={showPassword ? 'text' : 'password'} onChange={onChangeHandler} id='password' value={password} placeholder="Password"/>

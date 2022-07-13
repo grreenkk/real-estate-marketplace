@@ -25,7 +25,7 @@ const Navbar = () => {
                         <OfferIcon fill={correctPath('/offers') ? '#2c2c2c' : '#8f8f8f' } width='36px' height='36px'/>
                         <p>Offers</p>
                     </li>
-                    <li className='navbarListItem' onClick={()=>navigate('/sign-in')}>
+                    <li className='navbarListItem' onClick={()=>navigate('/profile')}>
                         <PersonOutlineIcon fill={correctPath('/sign-in') ?'#2c2c2c' : '#8f8f8f'} width='36px' height='36px'/>
                         <p>Profile</p>
                     </li>

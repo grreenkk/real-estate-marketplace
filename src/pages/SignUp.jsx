@@ -5,6 +5,8 @@ import {useState} from 'react'
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import {db} from '../firebase.config'
+import {toast} from 'react-toastify'
+
 
 
 
@@ -52,6 +54,7 @@ const SignUp = () => {
             navigate('/')
         }catch(error){
             console.log(error)
+            toast.error('Wrong entries')
         }
     }
 

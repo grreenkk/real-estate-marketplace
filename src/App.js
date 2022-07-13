@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import CustProfile from './pages/CustProfile';
 import Navbar from './components.jsx/Navbar';
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
@@ -20,11 +22,11 @@ function App() {
           <Route path='/sign-in' element={<SignIn/>} />
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/forgot-password' element={<ForgotPassword/>}/>
-          <Route path='/profile' element={<SignIn/>}/>
+          <Route path='/profile' element={<CustProfile/>}/>
         </Routes>
         <Navbar/>
       </Router>
-      
+      <ToastContainer/>
      
     </>
   );
