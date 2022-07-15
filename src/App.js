@@ -5,9 +5,10 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import CustProfile from './pages/CustProfile';
-import Navbar from './components.jsx/Navbar';
+import Navbar from './components/Navbar';
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import PrivateRoutes from './components/PrivateRoutes'
 
 
 
@@ -22,7 +23,9 @@ function App() {
           <Route path='/sign-in' element={<SignIn/>} />
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/forgot-password' element={<ForgotPassword/>}/>
-          <Route path='/profile' element={<CustProfile/>}/>
+          <Route path='/profile' element={<PrivateRoutes/>}>
+            <Route path='/profile' element={<CustProfile/>}/>
+          </Route>
         </Routes>
         <Navbar/>
       </Router>

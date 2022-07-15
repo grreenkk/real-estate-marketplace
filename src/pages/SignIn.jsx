@@ -35,7 +35,7 @@ const SignIn = () => {
             const userCredential = await signInWithEmailAndPassword(auth, email, password)
     
             if (userCredential.user) {
-                navigate('/profile')
+                navigate('/')
             }
         }catch (error){
             toast.error('Something went wrong')
