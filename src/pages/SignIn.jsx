@@ -4,6 +4,7 @@ import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 import {Link, useNavigate} from 'react-router-dom'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import {toast} from 'react-toastify'
+import OAuth from '../components/OAuth'
 
 
 
@@ -63,6 +64,7 @@ const SignIn = () => {
                     <p className="signInText">Sign In</p>
                     <button className="signInButton"><ArrowRightIcon fill="#ffffff" width="34px" height="34px"/></button>
                 </div>
+                <OAuth/>
                 <Link to='/sign-up' className='registerLink'> Sign Up</Link>
                 
                 
