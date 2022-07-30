@@ -4,6 +4,8 @@ import {updateDoc, doc} from 'firebase/firestore'
 import { useNavigate, Link } from 'react-router-dom'
 import {db} from '../firebase.config'
 import {toast} from 'react-toastify'
+import homeIcon from '../assets/svg/homeIcon.svg'
+import ArrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 
 
 
@@ -82,7 +84,11 @@ const CustProfile = () => {
                     <input className={!showEdit ? 'profileName' : 'profileNameActive'} disabled={!showEdit} value={name} onChange={onChangeHandler} id="name" />
                     <input className={!showEdit ? 'profileEmail' : 'profileEmailActive'} disabled={!showEdit} value={email} onChange={onChangeHandler} id="email"/>
                 </div>
-                
+                <Link to='/create-listing' className='createListing'>
+                    <img src={homeIcon} alt="home"/>
+                    <p>Sell or rent you home</p>
+                    <img src={ArrowRight} alt="arrow right"/>
+                </Link>
             </main>
         </div>
     )

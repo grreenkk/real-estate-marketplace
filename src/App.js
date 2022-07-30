@@ -10,6 +10,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import PrivateRoutes from './components/PrivateRoutes'
 import Category from './pages/Category';
+import CreateListing from './pages/CreateListings';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/profile' element={<PrivateRoutes/>}>
             <Route path='/profile' element={<CustProfile/>}/>
           </Route>
+          <Route path='/create-listing' element={<CreateListing/>}/>
         </Routes>
         <Navbar/>
       </Router>
