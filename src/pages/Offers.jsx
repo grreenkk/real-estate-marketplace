@@ -45,6 +45,8 @@ const Offers = () => {
         getOffersListings()
     }, [])
 
+    console.log(listings)
+
     return <div className='category'>
         <header>
             <p className="pageHeader">

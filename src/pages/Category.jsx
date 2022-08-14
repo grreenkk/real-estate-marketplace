@@ -25,6 +25,7 @@ const Category = () => {
                 //Execute query
                 const querySnap = await getDocs(q)//Gets the doc for the particular query
                 const listing = []
+                console.log(querySnap)
 
                 querySnap.forEach((doc)=>{
                     return listing.push({
@@ -48,7 +49,7 @@ const Category = () => {
     return <div className='category'>
         <header>
             <p className="pageHeader">
-                {params.categoryName==='rent' ? 'Places for rent':'Places for sale'}
+                {params.categoryName ==='rent' ? 'Places for rent':'Places for sale'}
             </p>
         </header>
         {loading ? <Spinner/> : listings && listings.length > 0 ? <main>
