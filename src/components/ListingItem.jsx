@@ -5,6 +5,8 @@ import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 
 
 const  ListingItem =({listing, id, onDelete})=>{
+  console.log(listing.type)
+
   return(
     
       <li className='categoryListing'>
