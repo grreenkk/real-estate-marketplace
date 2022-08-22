@@ -1,5 +1,6 @@
 import {Navigate, Outlet} from 'react-router-dom'
 import AuthBased from '../hooks/AuthBased'
+import Spinner from './Spinner'
 
 const PrivateRoute =()=>{
     const {loggedIn, checkingStatus} = AuthBased()
@@ -7,7 +8,7 @@ const PrivateRoute =()=>{
     console.log(loggedIn)
     
     if(checkingStatus){
-        return <h3>Loading....</h3>
+        return <Spinner/>
     }
 
     return loggedIn ? <Outlet/> : <Navigate to='/sign-in'/>

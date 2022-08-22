@@ -35,7 +35,7 @@ const  ListingItem =({listing, id, onDelete})=>{
         </Link>
 
         {onDelete && (
-          <DeleteIcon className='removeIcon' fill='rgb(231, 76, 60)' oncClick={()=>onDelete(listing.id, listing.name)}/>
+          <DeleteIcon className='removeIcon' fill='rgb(231, 76, 60)' onClick={()=>onDelete(id, listing.name)}/>
         )}
       </li>
    
