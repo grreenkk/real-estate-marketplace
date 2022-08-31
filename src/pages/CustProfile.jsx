@@ -109,6 +109,9 @@ const CustProfile = () => {
         toast.success('Successfully deleted listing')
     }
 
+    const onEdit = (id) => {
+        navigate(`/edit-listing/${id}`)
+    }
     console.log(loading)
    
         
@@ -144,7 +147,7 @@ const CustProfile = () => {
                     <p className="listingText">Your Listings</p>
                     <ul className="listingsList">   
                         {listings.map((listing)=>(
-                            <ListingItem key={listing.id} listing={listing.data} id={listing.id} onDelete={onDelete}/>
+                            <ListingItem key={listing.id} listing={listing.data} id={listing.id} onDelete={onDelete} onEdit={onEdit}/>
                         ))}
                     </ul>
                     </>
