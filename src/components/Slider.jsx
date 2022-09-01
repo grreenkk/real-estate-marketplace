@@ -45,7 +45,9 @@ const Slider = () => {
       console.log(data.imageUrls)
     })
 
-    // return <div>Slider</div>
+    if(listings.length === 0){
+      return <></>
+    }
 
   return listings && (
     <>

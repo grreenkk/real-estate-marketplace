@@ -110,6 +110,7 @@ const CustProfile = () => {
     }
 
     const onEdit = (id) => {
+        console.log(id)
         navigate(`/edit-listing/${id}`)
     }
     console.log(loading)
